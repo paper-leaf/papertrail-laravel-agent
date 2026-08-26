@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PaperLeaf\\PaperTrailAgent\\AgentServiceProvider"
+                "PaperLeaf\\PaperTrailAgent\\Providers\\PaperTrailAgentServiceProvider"
             ]
         }
     }
