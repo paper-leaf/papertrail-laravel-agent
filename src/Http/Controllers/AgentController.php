@@ -10,7 +10,7 @@ class AgentController
     {
         return response()->json([
             'status' => 'ok',
-            'agent' => 'papertrail',
+            'agent' => 'papertrail-laravel',
         ]);
     }
 }
