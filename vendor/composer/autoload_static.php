@@ -9,12 +9,12 @@ class ComposerStaticInit6666ad4304a40729c412968d88da3687
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
-            'PaperLeaf\\PapertrailAgent\\' => 26,
+            'PaperLeaf\\MonitoringAgent\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PaperLeaf\\PapertrailAgent\\' => 
+        'PaperLeaf\\MonitoringAgent\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

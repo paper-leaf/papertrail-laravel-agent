@@ -1,10 +1,23 @@
 {
     "name": "paper-leaf/papertrail-agent",
     "description": "A Laravel package that securely connects your application to PaperTrail, providing application and environment data and enabling PaperTrail to request supported actions.",
+    "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "PaperLeaf\\PapertrailAgent\\": "src/"
+            "PaperLeaf\\PaperTrailAgent\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PaperLeaf\\PaperTrailAgent\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
     },
     "authors": [
         {
@@ -12,5 +25,11 @@
             "email": "sarah@paper-leaf.com"
         }
     ],
-    "require": {}
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PaperLeaf\\PaperTrailAgent\\AgentServiceProvider"
+            ]
+        }
+    }
 }

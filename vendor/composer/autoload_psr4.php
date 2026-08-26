@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PaperLeaf\\PapertrailAgent\\' => array($baseDir . '/src'),
+    'PaperLeaf\\MonitoringAgent\\' => array($baseDir . '/src'),
 );
