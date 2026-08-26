@@ -1,0 +1,16 @@
+{
+    "name": "paper-leaf/papertrail-agent",
+    "description": "A Laravel package that securely connects your application to PaperTrail, providing application and environment data and enabling PaperTrail to request supported actions.",
+    "autoload": {
+        "psr-4": {
+            "PaperLeaf\\PapertrailAgent\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sarah Tinga",
+            "email": "sarah@paper-leaf.com"
+        }
+    ],
+    "require": {}
+}
