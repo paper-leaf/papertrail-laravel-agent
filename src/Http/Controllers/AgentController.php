@@ -25,6 +25,23 @@ class AgentController
      */
     public function overview(): JsonResponse
     {
+        $frameworks = [];
+        $framework_options = [
+            'filament/filament',
+            'livewire/livewire',
+            'statamic/cms',
+        ];
+        foreach($framework_options as $framework) {
+            $package = ComposerPackage::firstWhere('name', $framework);
+            if(!isset($package)) { continue; }
+
+            $frameworks[] = [
+                'name' => $framework,
+                'version' => $package->version,
+            ];
+        }
+
+
         $response = [
             'agent' => 'papertrail-laravel',
             'site' => [
@@ -40,17 +57,9 @@ class AgentController
                 'name' => 'laravel/framework',
                 'version' => optional(ComposerPackage::firstWhere('name', 'laravel/framework'))->version,
             ],
-            'frameworks' => [
-                [
-                    'name' => 'filament/filament',
-                    'version' => optional(ComposerPackage::firstWhere('name', 'filament/filament'))->version,
-                ],
-                [
-                    'name' => 'livewire/livewire',
-                    'version' => optional(ComposerPackage::firstWhere('name', 'livewire/livewire'))->version,
-                ],
-            ],
+            'frameworks' => $frameworks,
         ];
+        
 
         return response()->json($response); 
     }
