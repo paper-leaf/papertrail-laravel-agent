@@ -41,7 +41,6 @@ class AgentController
             ];
         }
 
-
         $response = [
             'agent' => 'papertrail-laravel',
             'site' => [
@@ -60,7 +59,6 @@ class AgentController
             'frameworks' => $frameworks,
         ];
         
-
         return response()->json($response); 
     }
 

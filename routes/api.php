@@ -10,7 +10,6 @@ $route_prefix = sprintf('%s/%s/%s', config('papertrail-agent.route.group-name', 
 Route::prefix($route_prefix)
     ->middleware(AuthenticateAgent::class)
     ->group(function () {
-
         // Test route to allow quick checks if a connection can be made
         Route::get('/status', [AgentController::class, 'status']);
 
