@@ -11,14 +11,14 @@ class AuthenticateAgent
     public function handle(Request $request, Closure $next): Response
     {
         // Check the authentication token
-        $token = $request->bearerToken();
+        $token = $request->header('PaperTrail-Token');
         
         // Verify that the token matches the configuration
         $registered_token = config('papertrail-agent.connection.token');
 
         if($token !== $registered_token) {
             return response()->json([
-                'message' => 'Unauthenticated.',
+                'message' => 'Invalid token.',
             ], 401);
         }
 
