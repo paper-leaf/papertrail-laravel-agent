@@ -18,7 +18,7 @@ class AuthenticateAgent
 
         if($token !== $registered_token) {
             return response()->json([
-                'message' => 'Invalid token.',
+                'message' => 'Unauthorized',
             ], 401);
         }
 
