@@ -52,25 +52,6 @@ class PackagesService
     }
 
     /**
-     * Run a bash/shell command
-     * 
-     * @param string $command
-     * @return string
-     */
-    public function runSystemCommand($command)
-    {
-        // 1. Run a basic system command
-        $result = Process::run($command);
-
-        // 2. Check if the process completed successfully
-        if ($result->successful()) {
-            return $result->output();
-        }
-
-        return $result->errorOutput();
-    }
-
-    /**
      * Check a composer package
      * 
      * @param string $package_name
