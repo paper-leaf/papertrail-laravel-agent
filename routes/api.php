@@ -12,12 +12,16 @@ $router->group([
     'prefix' => $route_prefix,
     'middleware' => [AuthenticateAgent::class, 'throttle:30,1']
 ], function ($router) {
-    // Test route to allow quick checks if a connection can be made
-    Route::get('/status', [AgentController::class, 'status']);
+    // Use 'uses' with the full class path and @ method indicator for Lumen
+    $router->get('/status', [
+        'uses' => '\PaperLeaf\PaperTrailAgent\Http\Controllers\AgentController@status'
+    ]);
 
-    // Route to get current site state
-    Route::get('/overview', [AgentController::class, 'overview']);
+    $router->get('/overview', [
+        'uses' => '\PaperLeaf\PaperTrailAgent\Http\Controllers\AgentController@overview'
+    ]);
 
-    // Route to get all packages + their versions
-    Route::get('/dependencies', [AgentController::class, 'dependencies']);
+    $router->get('/dependencies', [
+        'uses' => '\PaperLeaf\PaperTrailAgent\Http\Controllers\AgentController@dependencies'
+    ]);
 });
